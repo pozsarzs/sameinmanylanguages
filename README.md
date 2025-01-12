@@ -14,9 +14,11 @@ Modbus register number/address converter utility (part of the ModShell).
 
 #### Transscripts
 
-|filename  |language|tried in and on                   |note|
-|----------|--------|----------------------------------|----|
-|mbconv.bas|BASIC   |Microsoft GW-BASIC v3.23 (FreeDOS)|[^1]|
+|filename  |language|tried in and on                    |note|
+|----------|--------|-----------------------------------|----|
+|mbconv.bas|BASIC   |Microsoft GW-BASIC v3.23 (FreeDOS) |[^1]|
+|mbconv.pas|Pascal  |Borland Turbo Pascal v7.0 (FreeDOS)|    |
+|          |        |FreePascal v3.2.2 (Linux)          |    |
 
 [^1]: This version of the language does not support the use of command line
  parameters, so it prompts for the data.  
