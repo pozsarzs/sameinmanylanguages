@@ -4,12 +4,19 @@
 
 ### MBConv  
 
-Modbus register number/address converter utility (part of the ModShell)  
-- Version: 0.1  
-- Licence: EUPL v1.2  
+Modbus register number/address converter utility (part of the ModShell).  
 
-|original|language    |transcripts|language|tried in                |note|
-|--------|:----------:|-----------|:------:|------------------------|----|
-|mbconv  |own language|mbconv.bas |BASIC   |Microsoft GW-BASIC v3.23|    |
+#### Original file
 
-Copyright (C) 2025 Pozsár Zsolt <pozsarzs@gmail.com>  
+- Filename: mbconv  
+- Language: ModShell script  
+- Interpreter: ModShell v0.1-beta1  
+
+#### Transscripts
+
+|filename  |language|tried in and on                   |note|
+|----------|--------|----------------------------------|----|
+|mbconv.bas|BASIC   |Microsoft GW-BASIC v3.23 (FreeDOS)|[^1]|
+
+[^1]: This version of the language does not support the use of command line
+ parameters, so it prompts for the data.  
