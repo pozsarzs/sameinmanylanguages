@@ -1,7 +1,7 @@
 C +--------------------------------------------------------------------+
 C | MBConv v0.1 * Modbus register number/address converter utility     |
 C | Copyright (C) 2023-2024 Pozsar Zsolt <pozsarzs@gmail.com>          |
-C | mbconv.for                                                         |
+C | mbconv.f                                                           |
 C | FORTRAN IV version of the original mbconv ModShell script          |
 C +--------------------------------------------------------------------+
 C

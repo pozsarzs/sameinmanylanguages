@@ -2,7 +2,7 @@
 # +----------------------------------------------------------------------------+
 # | ModShell v0.1 * Command-driven scriptable Modbus utility                   |
 # | Copyright (C) 2023-2025 Pozsar Zsolt <pozsarzs@gmail.com>                  |
-# | mbconv                                                                     |
+# | mbconv.msh                                                                 |
 # | MBConv v0.1 * Modbus register number/address converter utility             |
 # +----------------------------------------------------------------------------+
 #

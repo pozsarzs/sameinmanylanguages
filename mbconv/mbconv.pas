@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
 { | MBConv v0.1 * Modbus register number/address converter utility           | }
-{ | Copyright (C) 2023-2024 Pozsar Zsolt <pozsarzs@gmail.com>                | }
+{ | Copyright (C) 2024 Pozsar Zsolt <pozsarzs@gmail.com>                     | }
 { | mbconv.pas                                                               | }
 { | Turbo Pascal version of the original mbconv ModShell script              | }
 { +--------------------------------------------------------------------------+ }
@@ -12,6 +12,7 @@
   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
   FOR A PARTICULAR PURPOSE.
 }
+
 program mbconv;
 { VARIABLES AND CONSTANTS }
 var
@@ -23,10 +24,10 @@ var
   valid: byte;
 const
   OFFSET: integer = 10000;
-  MSG: array[0..16] of string =
+  MSG: array[0..15] of string =
        (
         'MBConv v0.1 * Modbus register number/address converter utility',
-        '(C) 2024 Pozsar Zsolt <http:{www.pozsarzs.hu>',
+        '(C) 2024 Pozsar Zsolt <http://www.pozsarzs.hu>',
         'Usage:',
         '  register_number',
         '  c|d|i|h address',
@@ -40,10 +41,19 @@ const
         '  register address:  ',
         ' The register type can be c, d, i and h.',
         ' The address can be 0-9998.',
-        ' The register number can be 1-9999, 10001-19999, 30001-39999 and 40001-49999.',
-        '  ---------------------------------------------------------'
+        ' The register number can be 1-9999, 10001-19999, 30001-39999 and 40001-49999.'
        );
   REGTYPE: array[0..4] of char =('c','d','_','i','h');
+
+{ PRINT SPLITTER }
+procedure splitter;
+var
+  b: byte;
+begin
+  write('  ');
+  for b := 1 to 50 do write('-');
+  writeln;
+end;
 
 { CONVERT DEC -> HEX }
 function dec2hex(i: integer): string;
@@ -128,7 +138,7 @@ begin
     { print register number }
     writeln(MSG[10], rnumber);
     { print splitter }
-    writeln(MSG[16]);
+    splitter;
     { print register type }
     writeln(MSG[11], MSG[RTYPE]);
     { print register address }
@@ -160,7 +170,7 @@ begin
     { print register type }
     writeln(MSG[11], MSG[rtype + 5]);
     { print splitter }
-    writeln(MSG[16]);
+    splitter;
     { print register number }
     rnumber := (OFFSET * rtype) + raddress + 1;
     writeln(MSG[10], rnumber);

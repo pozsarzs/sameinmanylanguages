@@ -1,6 +1,6 @@
 1 REM   +----------------------------------------------------------------------+
 2 REM   | MBConv v0.1 * Modbus register number/address converter utility       |
-3 REM   | Copyright (C) 2023-2024 Pozsar Zsolt <pozsarzs@gmail.com>            |
+3 REM   | Copyright (C) 2025 Pozsar Zsolt <pozsarzs@gmail.com>                 |
 4 REM   | mbconv.bas                                                           |
 5 REM   | GW-BASIC version of the original mbconv ModShell script              |
 6 REM   +----------------------------------------------------------------------+
@@ -14,7 +14,7 @@
 14 REM
 20 REM *** CONSTANTS / MESSAGES ***
 21 DIM MSG$(16)
-22 FOR I%=0 TO 16
+22 FOR I%=0 TO 15
 23 READ MSG$(I%)
 24 NEXT I%
 25 DATA "MBConv v0.1 * Modbus register number/address converter utility"
@@ -33,7 +33,6 @@
 38 DATA " The register type can be c, d, i and h."
 39 DATA " The address can be 0-9998."
 40 DATA " The register number can be 1-9999, 10001-19999, 30001-39999 and 40001-49999."
-41 DATA "  ---------------------------------------------------------"
 50 REM *** CONSTANTS / REGISTER TYPES ***
 51 LET OFFSET%=10000
 52 DIM REGTYPE$(4)
@@ -66,7 +65,7 @@
 270 REM PRINT REGISTER NUMBER
 280 PRINT MSG$(10) RNUMBER!
 290 REM PRINT SPLITTER
-300 PRINT MSG$(16)
+300 GOSUB 2300
 310 REM PRINT REGISTER TYPE 
 320 PRINT MSG$(11) MSG$(RTYPE%)
 330 REM PRINT REGISTER ADDRESS
@@ -91,7 +90,7 @@
 620 REM PRINT REGISTER TYPE 
 630 PRINT MSG$(11) MSG$(RTYPE%+5)
 640 REM PRINT SPLITTER
-650 PRINT MSG$(16)
+650 GOSUB 2300
 660 REM PRINT REGISTER NUMBER
 670 LET RNUMBER!=(OFFSET%*RTYPE%)+RADDRESS%+1
 680 PRINT MSG$(10) RNUMBER!
@@ -123,3 +122,10 @@
 2250 IF (VAL(ARG1$)>=30001) AND (VAL(ARG1$)<=39999) THEN LET VALID%=3
 2260 IF (VAL(ARG1$)>=40001) AND (VAL(ARG1$)<=49999) THEN LET VALID%=4
 2270 RETURN
+2300 REM *** PRINT SPLITTER
+2310 SPLITTER$ = ""
+2320 FOR I%=1 TO 52
+2330 IF I%<3 THEN SPLITTER$ = SPLITTER$ + " " ELSE SPLITTER$ = SPLITTER$ + "-"
+2340 NEXT I%
+2350 PRINT SPLITTER$
+2360 RETURN
