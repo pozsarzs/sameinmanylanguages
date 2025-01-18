@@ -33,6 +33,7 @@ Modbus register number/address converter utility (part of the ModShell).
 |mbconv.bas|BASIC[^1]       |Microsoft GW-BASIC v3.23 (FreeDOS) |
 |mbconv.f  |FORTRAN IV[^1]  |FSF GNU Fortran v 12.2.0 (Linux)   |
 |mbconv.pas|Pascal          |Borland Turbo Pascal v7.0 (FreeDOS)|
+|mbconv.py |Python3         |PSF Python v3.11.2 (Linux)         |
 
 [^1]: This version of the language does not support the use of command
       line parameters, so it prompts for the data.  

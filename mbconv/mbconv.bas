@@ -1,6 +1,6 @@
 1 REM   +----------------------------------------------------------------------+
 2 REM   | MBConv v0.1 * Modbus register number/address converter utility       |
-3 REM   | Copyright (C) 2025 Pozsar Zsolt <pozsarzs@gmail.com>                 |
+3 REM   | Copyright (C) 2024 Pozsar Zsolt <pozsarzs@gmail.com>                 |
 4 REM   | mbconv.bas                                                           |
 5 REM   | GW-BASIC version of the original mbconv ModShell script              |
 6 REM   +----------------------------------------------------------------------+

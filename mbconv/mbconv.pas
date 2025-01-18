@@ -29,8 +29,8 @@ const
         'MBConv v0.1 * Modbus register number/address converter utility',
         '(C) 2024 Pozsar Zsolt <http://www.pozsarzs.hu>',
         'Usage:',
-        '  register_number',
-        '  c|d|i|h address',
+        '  mbconv register_number',
+        '  mbconv c|d|i|h address',
         ' discrete output coils',
         ' discrete input contacts',
         'ERROR:',
@@ -140,7 +140,7 @@ begin
     { print splitter }
     splitter;
     { print register type }
-    writeln(MSG[11], MSG[RTYPE]);
+    writeln(MSG[11], MSG[rtype]);
     { print register address }
     raddress := rnumber - ((OFFSET * valid) + 1);
     writeln(MSG[12], raddress, ' (', dec2hex(raddress), 'h)');
