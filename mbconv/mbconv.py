@@ -45,6 +45,13 @@ MSG = ['MBConv v0.1 * Modbus register number/address converter utility',
 REGTYPE = ['' for x in range(5)]
 REGTYPE = ['c','d','_','i','h']
 
+# PRINT SPLITTER
+def splitter():
+  s = '  '
+  for i in range(51):
+    s = s + '-'
+  print(s)
+
 # CHECK REGISTER TYPE
 # result: 0,1,3,4 or 255
 def chkregtype(s):
@@ -81,13 +88,6 @@ def chkregnum(s):
   if (w >= 30001) and (w <= 39999): valid = 3;
   if (w >= 40001) and (w <= 49999): valid = 4;
   return valid
-
-# PRINT SPLITTER
-def splitter():
-  s = '  '
-  for i in range(51):
-    s = s + '-'
-  print(s)
 
 # MAIN
 valid = 255
